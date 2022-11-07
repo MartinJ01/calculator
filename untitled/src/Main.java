@@ -28,7 +28,7 @@ public class Main {
             return Integer.toString(calculate(Integer.parseInt(input1), operation, Integer.parseInt(input2)));
         }
         if (isCorrectRomanInput()) {
-            if (rom2dec(input1) < rom2dec(input2) || rom2dec(input2) > 10 || rom2dec(input1) > 10) {
+            if (rom2dec(input1) < rom2dec(input2) && operation == "-" || rom2dec(input2) > 10 || rom2dec(input1) > 10) {
                 throw new Exception("Invalid input");
             }
             return dec2rom(calculate(rom2dec(input1), operation, rom2dec(input2)));
