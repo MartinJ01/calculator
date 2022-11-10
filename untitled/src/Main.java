@@ -63,13 +63,13 @@ public class Main {
         Pattern pattern = Pattern.compile(intPattern);
         Matcher match1 = pattern.matcher(input1),
                 match2 = pattern.matcher(input2);
-        boolean ret = match1.find() && match2.find();
-        if (ret) {
+        if (match1.find() && match2.find()) {
             if (Integer.parseInt(input1) > 10 || Integer.parseInt(input2) > 10) {
                 throw new Exception("Incorrect input");
             }
+            return true;
         }
-        return ret;
+        return false;
     }
 
     private static String dec2rom(int input) {
